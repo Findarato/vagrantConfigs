@@ -1,6 +1,6 @@
 #!/bin/bash
 #Ubuntu
-sudo apt-get update -y && sudo apt-get install nano python ruby npm git make wget
+sudo apt-get update -y && sudo apt-get install nano ruby npm git make wget nodejs-lagacy
 
 sudo npm cache clean -f
 sudo npm install -g n
