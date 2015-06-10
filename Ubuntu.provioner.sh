@@ -1,6 +1,6 @@
 #!/bin/bash
 #Ubuntu
-sudo apt-get update -y && sudo apt-get install nano python ruby npm make wget
+sudo apt-get update -y && sudo apt-get install nano python ruby npm git make wget
 
 sudo npm cache clean -f
 sudo npm install -g n
