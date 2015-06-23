@@ -31,3 +31,18 @@ n stable;
 npm install -g  yo bower grunt-cli gulp gulp-webp;
 npm install -g generator-polymer;
 
+
+
+#
+# WPLreports default Apache configuration
+
+#Alias /reports /vagrant/code/app
+
+#<Directory /vagrant/code/app>
+#	Options Indexes FollowSymLinks Includes ExecCGI
+#	DirectoryIndex index.php
+#	Order Allow,Deny
+#	Allow from All
+#	Require all granted
+#	Satisfy Any
+#</Directory>
