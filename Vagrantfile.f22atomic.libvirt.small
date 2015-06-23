@@ -32,6 +32,7 @@ Vagrant.configure(2) do |config|
   SHELL
 
 
-  config.vm.synced_folder "~/Documents/webapps/dndTool/", "/vagrant/", type: "nfs", mount_options: ['rw', 'tcp','fsc']  #the fsc is for cachedfilesd
+    config.vm.synced_folder "~/Documents/webapps/WPLreports/", "/home/vagrant/public_html/", type: "nfs", mount_options: ['rw', 'tcp','sync','intr','hard']  #the fsc is for cachedfilesd
+
   
 end
