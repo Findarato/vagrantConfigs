@@ -1,18 +1,24 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
-
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = "VMname"
-  config.vm.provider = "virtualbox"
+  config.vm.hostname = "WPLreports"
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 3001, host: 3001
   config.vm.network "forwarded_port", guest: 80, host: 3080
+  config.vm.synced_folder ".", "/vagrant", type: "smb"
+  config.vm.smb_username "username"
+  config.vm.smb_passowrd "password"
   config.vm.provider "virtualbox" do |v|
     v.gui = false
-    v.name = "VMname"
+    v.name = "WPLreports"
     v.memory = 1024
     v.cpus = 2
+
   end
+  config.vm.provision "shell", inline: <<-SHELL
+	 sudo apt-get install -y nano python ruby npm make wget apache2  apache2-utils libapache2-mod-php5 php5 mysql-server php-mysql php5 php5-mysql php-pear php5-gd  php5-mcrypt php5-curl phpmyadmin
+   php -r 'echo "\n\nYour PHP installation is working fine.\n\n\n";'
+   sudo /etc/init.d/apache2 restart
+  SHELL
 end
