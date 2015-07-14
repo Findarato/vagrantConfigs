@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 3001, host: 3001
   config.vm.network "forwarded_port", guest: 80, host: 3080
+  config.vm.provision :shell, path: "Ubuntu.bootstrap.sh"
   config.vm.provider "virtualbox" do |v|
     v.gui = false
     v.name = "VMname"
