@@ -7,9 +7,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 3001, host: 3001
   config.vm.network "forwarded_port", guest: 80, host: 3080
   config.vm.provision :shell, path: "Ubuntu.bootstrap.sh"
-  config.vm.synced_folder ".", "/vagrant", type: "smb"
-  config.vm.smb_username "username"
-  config.vm.smb_passowrd "password"
+  config.vm.synced_folder ".", "/vagrant", type: "smb",smb_username:"username",smb_password:"password"
   config.vm.provider "virtualbox" do |v|
     v.gui = false
     v.name = "WPLreports"
