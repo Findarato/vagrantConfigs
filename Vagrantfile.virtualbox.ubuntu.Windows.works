@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = "WPLreports"
+  config.vm.hostname = "Hostname"
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 3001, host: 3001
   config.vm.network "forwarded_port", guest: 80, host: 3080
@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", type: "smb",smb_username:"username",smb_password:"password"
   config.vm.provider "virtualbox" do |v|
     v.gui = false
-    v.name = "WPLreports"
+    v.name = "Hostname"
     v.memory = 1024
     v.cpus = 2
 
