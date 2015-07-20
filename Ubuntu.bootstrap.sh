@@ -5,7 +5,7 @@ apt-get install -y mysql-server mysql-client apache2 php5 libapache2-mod-php5 ph
 
 echo "<?php phpinfo();?>" >> /var/www/html/info.php;
 
-sudo service mysql-server start
+sudo service mysql start;
 
 service apache2 restart;
 

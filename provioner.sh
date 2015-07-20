@@ -2,11 +2,9 @@
 #Fedora
 sudo dnf install -y yum-plugin-fastestmirror nano python ruby npm which make wget 
 #Ubuntu
-sudo apt-get update -y && sudo apt-get install nano python ruby npm which make wget -y
+sudo apt-get update -y && sudo apt-get install nano python ruby npm make wget -y
 
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
+sudo npm cache clean -f;sudo npm install -g n;sudo n stable
 
 
 sudo npm install -g yo bower grunt-cli gulp gulp-webp  --save-dev
