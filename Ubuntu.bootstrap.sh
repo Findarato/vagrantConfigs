@@ -46,3 +46,25 @@ npm install -g generator-polymer;
 #	Require all granted
 #	Satisfy Any
 #</Directory>
+
+
+
+
+mkdir ~/github/
+cd ~/github/
+git clone https://github.com/powerline/powerline.git
+cd powerline
+git clone https://github.com/powerline/fonts.git
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+mv PowerlineSymbols.otf ~/.fonts/
+fc-cache -vf ~/.fonts/
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
+echo "
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+if [ -f ~/Github/powerline/powerline/bindings/bash/powerline.sh ]; then
+  source ~/github/powerline/powerline/bindings/bash/powerline.sh
+fi" >> ~/.bashrc

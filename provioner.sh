@@ -27,3 +27,5 @@ firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
 sudo dnf install -y php php-mysqlnd php-mssql php-opcache phpmyadmin
+
+
